@@ -40,3 +40,19 @@ var app = {
         completeElem.className = completeElem.className.split('hide').join('');
     }
 };
+
+function loadPDF(URL) { 
+	console.log(URL);
+	loadChildBrowser(true, URL);
+}
+function loadChildBrowser(isInternal, URL) { 
+            if(isInternal){ 
+                    var strPath = window.location.href; 
+                    var path = strPath.substr(0,strPath.lastIndexOf('/')) + URL; 
+					window.plugins.childBrowser.showWebPage("www/assets/folder/file.pdf");
+                    //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
+            } 
+            else{ 
+                    Cordova.exec("ChildBrowserCommand.showWebPage", URL ); 
+            } 
+    }
