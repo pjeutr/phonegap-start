@@ -49,7 +49,8 @@ function loadChildBrowser(isInternal, URL) {
             if(isInternal){ 
                     var strPath = window.location.href; 
                     var path = strPath.substr(0,strPath.lastIndexOf('/')) + URL; 
-					window.plugins.childBrowser.showWebPage("www/assets/folder/file.pdf");
+					console.log(encodeURI(path));
+					window.plugins.childBrowser.showWebPage(encodeURI(path));
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
             } 
             else{ 
