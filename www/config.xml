@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.hello-world"
-        version   = "2.0.0">
+        id        = "com.maaslandgroup.catalog"
+		versionCode = "1"
+        version   = "0.1.0">
     <name>Maasland</name>
 
     <description>
-        Catalogus.
+        Maasland Catalogus.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
+    <author href="http://pjeutr.com" email="support@pjeutr.com">
         Peter Sloots
     </author>
 
