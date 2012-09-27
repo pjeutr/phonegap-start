@@ -12,16 +12,15 @@
     </head>
     <body>
         <div class="app">
-            <h1>Maasland</h1>
-			<a href="#" onclick="loadPDF('pdf/EVT.pdf')" >1 ELEKTRISCHE VERGRENDELINGEN</a><br><br>
-			<a href="#" onclick="loadPDF('pdf/EMT.pdf')" >2 ELEKTROMAGNETEN</a><br><br>
-			<a href="#" onclick="loadPDF('pdf/TCT.pdf')" >3 TOEGANGSCONTROLE</a><br><br>
-			<a href="#" onclick="loadPDF('pdf/DBT.pdf')" >4 DEURBESLAG</a><br><br>
-			<a href="#" onclick="loadPDF('pdf/SMT.pdf')" >5 SCHAKELMATERIAAL</a><br><br>
-			<br><br>
+            <h1>Catalogus</h1>
+			<ul>
+			<li><a href="#" onclick="loadPDF('pdf/EVT.pdf')" >ELEKTRISCHE VERGRENDELINGEN</a></li>
+			<li><a href="#" onclick="loadPDF('pdf/EMT.pdf')" >ELEKTROMAGNETEN</a></li>
+			<li><a href="#" onclick="loadPDF('pdf/TCT.pdf')" >TOEGANGSCONTROLE</a></li>
+			<li><a href="#" onclick="loadPDF('pdf/DBT.pdf')" >DEURBESLAG</a></li>
+			<li><a href="#" onclick="loadPDF('pdf/SMT.pdf')" >SCHAKELMATERIAAL</a></li>
+			</ul>
 			<button onclick="window.plugins.childBrowser.showWebPage('http://www.maaslandgroep.nl/');">Kijk ook op onze website!</button><br>
-			<br><br>
-			<a href="viewer.html" id="" title="1"> PDFJStest</a><br><br>
         </div>
 		
 		<script src="cordova.js"></script>
