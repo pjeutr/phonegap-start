@@ -19,6 +19,16 @@
 var app = {
     initialize: function() {
         this.bind();
+
+		$.jQTouch({
+		    icon: 'icon.png',
+		    statusBar: 'black-translucent',
+		    preloadImages: [
+				'img/DB.jpg',
+				'img/EM.jpg'
+			]
+		});
+
     },
     bind: function() {
         document.addEventListener('deviceready', this.deviceready, false);
@@ -40,6 +50,16 @@ var app = {
         completeElem.className = completeElem.className.split('hide').join('');
     }
 };
+
+$('#EVT').tap(function() {
+	loadPDF('pdf/EVT.pdf');
+});
+// $('#EMT').tap(function() {
+// 	loadPDF('pdf/EMT.pdf');
+// });
+// $('#TCT').tap(function() {
+// 	loadPDF('pdf/TCT.pdf');
+// });
 
 function loadPDF(URL) { 
 	console.log(URL);
