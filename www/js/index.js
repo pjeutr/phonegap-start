@@ -20,14 +20,14 @@ var app = {
     initialize: function() {
         this.bind();
 
-		// $.jQTouch({
-		//     icon: 'icon.png',
-		//     statusBar: 'black-translucent',
-		//     preloadImages: [
-		// 		'img/DB.jpg',
-		// 		'img/EM.jpg'
-		// 	]
-		// });
+		$.jQTouch({
+		    icon: 'icon.png',
+		    statusBar: 'black-translucent',
+		    preloadImages: [
+				'img/DB.jpg',
+				'img/EM.jpg'
+			]
+		});
 
     },
     bind: function() {
