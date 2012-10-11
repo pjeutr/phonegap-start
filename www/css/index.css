@@ -4,15 +4,17 @@ body {
 /* Portrait layout (default) */
 .app {
 	position:absolute; /* position in the center of the screen */
+/*	
     top:50%;
 	height:526px;
-	/*margin-top: -263px;*/ /* helft van de height + nogwat 263+10  */	
+	margin-top: -263px; /* helft van de height + nogwat 263+10  */	
+	
 	left:50%;
 	width: 300px;
-	/*margin-left: -150px;*/ /* helft van de width */
+	margin-left: -150px; /* helft van de width */
 	
-	padding:0px 0px 0px 0px;     
-    margin:-263px 0px 0px -150px; 
+/*	padding:0px 0px 0px 0px;     
+    margin:-263px 0px 0px -150px; */
                                    
     text-align:center;
 }
