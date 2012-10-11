@@ -30,8 +30,10 @@ var app = {
 		});
 
     },
+
     bind: function() {
         document.addEventListener('deviceready', this.deviceready, false);
+		//document.addEventListener("orientationchange", updateOrientation);
     },
     deviceready: function() {
         // This is an event handler function, which means the scope is the event.
@@ -60,6 +62,42 @@ $('#EVT').tap(function() {
 // $('#TCT').tap(function() {
 // 	loadPDF('pdf/TCT.pdf');
 // });
+
+function updateOrientation(){
+
+    switch(window.orientation) 
+    {  
+      case -90:
+      case 90:
+        console.log('landschap');
+        break; 
+      default:
+        console.log('portret');
+        break; 
+    }
+
+	//window.scrollTo(0, 0);
+	//setTimeout(relala, 1000) //reset to top
+	//setTimeout(scrollTo, 100, 0, 1);
+	//document.location.reload();
+
+}
+
+
+function relala(){
+	console.log("RESET");
+	//window.scrollTo(0, 0);
+	//document.location.reload();
+}
+
+$(function(){
+    $('body').bind('turn', function(event, info){
+			console.log(info.orientation); // landscape or profile
+			//document.location.reload(); //refresh
+			//setTimeout(relala, 1000) //reset to top
+    });
+    
+});
 
 function loadPDF(URL) { 
 	console.log(URL);

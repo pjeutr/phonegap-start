@@ -1254,7 +1254,7 @@ body {
 
 /* line 5, ../scss/include/_skeleton.scss */
 body {
-  background: black;
+  background: white;
 }
 
 /* line 9, ../scss/include/_skeleton.scss */
@@ -1289,7 +1289,7 @@ body {
 #jqt h1, #jqt h2 {
   font: bold 18px "Helvetica Neue", Helvetica;
   margin: 10px 20px 6px;
-  color: #666666;
+  color: #000;
   text-shadow: #e6e6e6 0 1px 0;
 }
 /* line 41, ../scss/include/_skeleton.scss */
@@ -1865,7 +1865,7 @@ body {
 
 /* line 8, ../scss/vanilla.scss */
 #jqt > * {
-  background-color: #cccccc;
+  background-color: transparent;
 }
 /* line 12, ../scss/vanilla.scss */
 #jqt .toolbar {

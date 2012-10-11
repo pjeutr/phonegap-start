@@ -1,10 +1,64 @@
-
-
-#logo {
-/*	float: left;*/
-	width:240px;   
+body {
+/*	background:url(../img/logo.png) no-repeat center top; */
 }
-#menu {
+/* Portrait layout (default) */
+.app {
+	position:absolute; /* position in the center of the screen */
+    top:50%;
+	height:526px;
+	/*margin-top: -263px;*/ /* helft van de height + nogwat 263+10  */	
+	left:50%;
+	width: 300px;
+	/*margin-left: -150px;*/ /* helft van de width */
 	
-	width:370px;   
+	padding:0px 0px 0px 0px;     
+    margin:-263px 0px 0px -150px; 
+                                   
+    text-align:center;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+		/*padding: 100px 100px 100px 100px;*/
+		/*margin: 100px 100px 100px 100px;*/
+    }
+}
+
+.test {
+	color: purple;
+}
+
+#menu {
+
+			
+}
+/*
+http://mislav.uniqpath.com/2010/04/targeted-css/
+http://blog.cloudfour.com/ipad-orientation-css/
+*/
+@media only screen and (max-width: 999px) {
+	/* rules that only apply for canvases narrower than 1000px */
+	.test {
+		color: red;
+	}
+}
+
+/*@media only screen and (device-width: 768px) and (orientation: landscape) {*/
+@media only screenx and (orientation: landscape) {
+	/* rules for iPad in landscape orientation */
+	.test {
+		color: green;
+	}
+	body {
+		background-position:left center;
+	}
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	/* iPhone, Android rules here */
+	.test {
+		color: blue;
+	}
 }
