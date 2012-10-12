@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var currentOrientation = null;
 var app = {
     initialize: function() {
         this.bind();
@@ -33,7 +34,7 @@ var app = {
 
     bind: function() {
         document.addEventListener('deviceready', this.deviceready, false);
-		//document.addEventListener("orientationchange", updateOrientation);
+		document.addEventListener("orientationchange", updateOrientation);
     },
     deviceready: function() {
         // This is an event handler function, which means the scope is the event.
@@ -75,7 +76,7 @@ function updateOrientation(){
         console.log('portret');
         break; 
     }
-
+	//$('body,#jqt').add(window).trigger('orientationchange');
 	//window.scrollTo(0, 0);
 	//setTimeout(relala, 1000) //reset to top
 	//setTimeout(scrollTo, 100, 0, 1);
@@ -89,15 +90,21 @@ function relala(){
 	//window.scrollTo(0, 0);
 	//document.location.reload();
 }
-
-$(function(){
-    $('body').bind('turn', function(event, info){
-			console.log(info.orientation); // landscape or profile
-			//document.location.reload(); //refresh
-			//setTimeout(relala, 1000) //reset to top
-    });
-    
-});
+// 
+// $(function(){
+//     $('body').bind('turn', function(event, info){
+// 			console.log(info.orientation+"="+currentOrientation); // landscape or profile
+// 			if(info.orientation != currentOrientation) {
+// 				//document.location.reload(); //refresh
+// 				//setTimeout(relala, 1000) //reset to top
+// 				//relala();
+// 			}
+// 			
+// 			currentOrientation = info.orientation;
+// 			//$('body,#jqt').add(window).trigger('orientationchange');
+//     });
+//     
+// });
 
 function loadPDF(URL) { 
 	console.log(URL);
