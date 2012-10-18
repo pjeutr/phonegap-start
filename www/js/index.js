@@ -1,58 +1,28 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-var currentOrientation = null;
-var app = {
-    initialize: function() {
-        this.bind();
 
-		$.jQTouch({
-		    icon: 'icon.png',
-		    statusBar: 'black-translucent',
-		    preloadImages: [
-				'img/DB.jpg',
-				'img/EM.jpg'
-			]
-		});
 
-    },
-
-    bind: function() {
-        document.addEventListener('deviceready', this.deviceready, false);
-		document.addEventListener("orientationchange", updateOrientation);
-    },
-    deviceready: function() {
-        // This is an event handler function, which means the scope is the event.
-        // So, we must explicitly called `app.report()` instead of `this.report()`.
-        app.report('deviceready');
-    },
-    report: function(id) {
-        // Report the event in the console
-        console.log("Report: " + id);
-
-        // Toggle the state from "pending" to "complete" for the reported ID.
-        // Accomplished by adding .hide to the pending element and removing
-        // .hide from the complete element.
-        document.querySelector('#' + id + ' .pending').className += ' hide';
-        var completeElem = document.querySelector('#' + id + ' .complete');
-        completeElem.className = completeElem.className.split('hide').join('');
-    }
+jQuery.fn.center = function() {
+	console.log("center");
+	//this.css("position", "absolute");
+	console.log($(window).height() + "=" + this.height() + " scroll=" + $(window).scrollTop());
+	this.css("top", ($(window).height() - this.height()) / 2 + $(window).scrollTop() + "px");
+	this.css("left", ($(window).width() - this.width()) / 2 + $(window).scrollLeft() + "px");
+	return this;
 };
+	
+$(document).ready(function(){
+
+	console.log("start");
+
+
+	//$("#app").center();
+
+
+});
+
+$( document ).delegate("#home", "pageinit", function() {
+	document.addEventListener("orientationchange", updateOrientation);
+	//alert('A page with an id of "aboutPage" was just created by jQuery Mobile!');
+});
 
 $('#EVT').tap(function() {
 	loadPDF('pdf/EVT.pdf');
@@ -65,46 +35,28 @@ $('#EVT').tap(function() {
 // });
 
 function updateOrientation(){
-
-    switch(window.orientation) 
-    {  
-      case -90:
-      case 90:
-        console.log('landschap');
-        break; 
-      default:
-        console.log('portret');
-        break; 
+	//alert($.mobile.activePage);
+    if ($.event.special.orientationchange.orientation() == "portrait") {
+        //alert('portrait');
+    } else {
+        //alert('landscape');
     }
-	//$('body,#jqt').add(window).trigger('orientationchange');
-	//window.scrollTo(0, 0);
-	//setTimeout(relala, 1000) //reset to top
-	//setTimeout(scrollTo, 100, 0, 1);
-	//document.location.reload();
-
+	//$('#home').page('destroy').page();
+	//$.mobile.trigger( "pagecreate" );
+	//$.mobile.changePage();
+	
+	window.location.reload(); 
+	//$("#home").page(); - to initialize page widget
+	//$("#home").page('refresh'); - to refresh it
+	//trigger("create");
+	//trigger("updatelayout");
+	
+	// Page refresh
+	//$("#home").trigger('pagecreate');
+	//$("#home").listview('refresh');
 }
 
 
-function relala(){
-	console.log("RESET");
-	//window.scrollTo(0, 0);
-	//document.location.reload();
-}
-// 
-// $(function(){
-//     $('body').bind('turn', function(event, info){
-// 			console.log(info.orientation+"="+currentOrientation); // landscape or profile
-// 			if(info.orientation != currentOrientation) {
-// 				//document.location.reload(); //refresh
-// 				//setTimeout(relala, 1000) //reset to top
-// 				//relala();
-// 			}
-// 			
-// 			currentOrientation = info.orientation;
-// 			//$('body,#jqt').add(window).trigger('orientationchange');
-//     });
-//     
-// });
 
 function loadPDF(URL) { 
 	console.log(URL);
