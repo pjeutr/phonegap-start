@@ -1,3 +1,7 @@
+.test {
+	color: purple;
+}
+
 body, .ui-body-c, .ui-overlay-c {
 /*	background:url(../img/logo.png) no-repeat center top; */
 	background-color: #fff;
@@ -22,6 +26,7 @@ body, .ui-body-c, .ui-overlay-c {
     text-align:center;
 }
 
+
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app3 {
@@ -41,9 +46,6 @@ body, .ui-body-c, .ui-overlay-c {
 }
 
 
-.test {
-	color: purple;
-}
 
 /*
 http://mislav.uniqpath.com/2010/04/targeted-css/
@@ -71,5 +73,15 @@ http://blog.cloudfour.com/ipad-orientation-css/
 	/* iPhone, Android rules here */
 	.test {
 		color: blue;
+	}
+}
+
+@media only screen and (max-height:526px) {
+	.test {
+		color: yellow;
+	}
+	#app {
+	    top:0px;
+		margin-top: 0px;
 	}
 }
