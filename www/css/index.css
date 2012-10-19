@@ -40,14 +40,11 @@ body, .ui-body-c, .ui-overlay-c {
     top: 0;
 }
 
+
 .test {
 	color: purple;
 }
 
-#menu {
-
-			
-}
 /*
 http://mislav.uniqpath.com/2010/04/targeted-css/
 http://blog.cloudfour.com/ipad-orientation-css/
