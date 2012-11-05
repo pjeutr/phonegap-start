@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.maaslandgroup.catalog"
 		versionCode = "1"
-        version   = "1.0.1">
+        version   = "1.0.2">
     <name>Maasland</name>
 
     <description>
@@ -21,7 +21,10 @@
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="true" />
 
-	<gap:plugin name="ChildBrowser" version="~3" /> <!-- for Cordova (1.9.0+) -->
+    <gap:plugin name="ChildBrowser" version="~3" /> <!-- for Cordova (1.9.0+) -->
+
+    <!-- android: allow installation on sdcard -->
+    <preference name="android-installLocation" value="auto" />
 
     <icon src="icon.png" />
 
