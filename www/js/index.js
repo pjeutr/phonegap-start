@@ -69,8 +69,8 @@ function loadPDF(URL) {
 function loadChildBrowser(isInternal, URL) { 
             if(isInternal){ 
                     var strPath = window.location.href; 
-                    //var path = strPath.substr(0,strPath.lastIndexOf('/')) + '/' + URL; 
-					var path = 'file:///mnt/sdcard/' + URL;
+                    var path = strPath.substr(0,strPath.lastIndexOf('/')) + '/www/' + URL; 
+					//var path = 'file:///mnt/sdcard/' + URL;
 					console.log(encodeURI(path));
 					window.plugins.childBrowser.showWebPage(encodeURI(path));
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
