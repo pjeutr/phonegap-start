@@ -72,7 +72,9 @@ function loadChildBrowser(isInternal, URL) {
                     var path = strPath.substr(0,strPath.lastIndexOf('/')) + '/' + URL; 
 					//var path = 'file:///mnt/sdcard/' + URL;
 					console.log(encodeURI(path));
-					window.plugins.childBrowser.showWebPage(encodeURI(path));
+					//window.plugins.childBrowser.showWebPage(encodeURI(path));
+					cordova.exec(null, null, "PdfViewer", "showPdf", [path]);
+					
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
             } 
             else{ 
