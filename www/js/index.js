@@ -60,7 +60,11 @@ function updateOrientation(){
 
 function loadPDF(URL) { 
 	console.log(URL);
-	loadChildBrowser(true, URL);
+	if(true) { //alleen voor android
+		cordova.exec(null, null, "PdfViewer", "showPdf", URL);
+	} else {
+		loadChildBrowser(true, URL);
+	}	
 }
 function loadChildBrowser(isInternal, URL) { 
             if(isInternal){ 
