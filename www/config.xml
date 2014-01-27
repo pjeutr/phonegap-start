@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.maaslandgroup.catalog"
 		versionCode = "4"
-        version   = "1.1.2">
+        version   = "1.2.0">
     <name>Maasland</name>
 
     <description> 
