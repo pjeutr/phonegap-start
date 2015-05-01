@@ -52,4 +52,5 @@
 	<gap:splash src="res/screen/ios/screen-ipad-landscape.png"     	gap:platform="ios"     width="1024" height="768" />
 	<gap:splash src="res/screen/ios/screen-ipad-landscape.png"     	gap:platform="ios"     width="2028" height="1536" />
 
+	<access origin="*" />
 </widget>
