@@ -60,6 +60,7 @@ function updateOrientation(){
 
 function loadPDF(URL) { 
 	console.log(URL);
+	alert(URL);
 	loadChildBrowser(true, URL);
 }
 function loadChildBrowser(isInternal, URL) { 
