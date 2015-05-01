@@ -67,7 +67,7 @@ function loadChildBrowser(isInternal, URL) {
                     var strPath = window.location.href; 
                     var path = strPath.substr(0,strPath.lastIndexOf('/')) + '/' + URL; 
 					console.log(encodeURI(path));
-					window.plugins.childBrowser.showWebPage(encodeURI(path));
+					window.plugins.ChildBrowser.showWebPage(encodeURI(path));
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
             } 
             else{ 
