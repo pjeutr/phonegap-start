@@ -15,7 +15,7 @@
 		<script src="cordova.js"></script>
 		<script src="childbrowser.js"></script>
 
-        <script type="text/javascript" src="js/index.js?e"></script>
+        <script type="text/javascript" src="js/index.js?a"></script>
 
         <title>Maasland</title>
     </head>
@@ -42,13 +42,9 @@
 					<a 
 							data-role="button" data-icon="home" data-theme="d"
 							id="#" onclick="window.plugins.ChildBrowser.showWebPage('http://www.maaslandgroep.nl/',
-							                                        { showLocationBar: true }
+								{ showLocationBar: true, showAddress: true, showNavigationBar: true }
 							);" >Website</a>
-							<a 
-									data-role="button" data-icon="home" data-theme="d"
-									id="#" onclick="window.plugins.ChildBrowser.showWebPage('http://www.google.com',
-									                                        { showLocationBar: true, showAddress: true, showNavigationBar: true });" >Website</a>
-					<!-- <button onclick="window.plugins.childBrowser.showWebPage('http://www.maaslandgroep.nl/');">Kijk ook op onze website!</button><br> -->
+
 				</div>
 	        </div></div>
 		</div></div>
