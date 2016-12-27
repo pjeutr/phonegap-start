@@ -64,10 +64,11 @@ function loadPDF(URL) {
 }
 function loadChildBrowser(isInternal, URL) { 
             if(isInternal){ 
+					alert("asdf");
                     var strPath = window.location.href; 
                     var path = strPath.substr(0,strPath.lastIndexOf('/')) + '/' + URL; 
 					console.log(encodeURI(path));
-					window.plugins.cordova.InAppBrowser.open(encodeURI(path),'_blank','location=yes,toolbar=yes');
+					cordova.InAppBrowser.open(encodeURI(path),'_blank','location=yes,toolbar=yes');
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
             } 
             else{ 
