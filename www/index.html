@@ -31,18 +31,19 @@
 				<div id="menu">
 					<!-- <h5 class="test">Catalogus</h5> -->
 					<ul data-role="listview" data-inset="true" >
-						<li><a id="EVT" onclick="loadPDF('pdf/001_EV_2016_ZP_PS.pdf')">Vergrendelingen</a></li>
-						<li><a id="EMT" onclick="loadPDF('pdf/002_EM_2016_ZP_PS.pdf')" >Elektromagneten</a></li>
-						<li><a id="TCT" onclick="loadPDF('pdf/003_TC_2016_ZP_PS.pdf')" >Toegangscontrole</a></li>
-						<li><a id="DBT" onclick="loadPDF('pdf/004_AC_2016_ZP_PS.pdf')" >Accessoires</a></li>
-						<li><a id="SMT" onclick="loadPDF('pdf/005_DD_2016_ZP_PS.pdf')" >Deurdrangers</a></li>
-						<li><a id="SMT" onclick="loadPDF('pdf/006_DB_2016_ZP_PS.pdf')" >Deurbeslag</a></li>
-						<li><a id="PL" onclick="loadPDF('pdf/2016_PL_HR.pdf')" >Prijslijst 2016</a></li>
+						<li><a id="EVT" onclick="loadPDF('pdf/001_EV_2017_ZP_HR.pdf')">Vergrendelingen</a></li>
+						<li><a id="EMT" onclick="loadPDF('pdf/002_EM_2017_ZP_HR.pdf')" >Elektromagneten</a></li>
+						<li><a id="TCT" onclick="loadPDF('pdf/003_TC_2017_ZP_HR.pdf')" >Toegangscontrole</a></li>
+						<li><a id="DBT" onclick="loadPDF('pdf/004_AC_2017_ZP_HR.pdf')" >Accessoires</a></li>
+						<li><a id="SMT" onclick="loadPDF('pdf/005_DD_2017_ZP_HR.pdf')" >Deurdrangers</a></li>
+						<li><a id="SMT" onclick="loadPDF('pdf/006_DB_2017_ZP_HR.pdf')" >Deurbeslag</a></li>
+						<li><a id="PL" onclick="loadPDF('pdf/PRIJSLIJST_2017_HR.pdf')" >Prijslijst 2017</a></li>
 					</ul>
+					<!-- { showLocationBar: true, showAddress: true, showNavigationBar: true } -->
 					<a 
 							data-role="button" data-icon="home" data-theme="d"
-							id="#" onclick="window.plugins.ChildBrowser.showWebPage('http://www.maaslandgroep.nl/',
-								{ showLocationBar: true, showAddress: true, showNavigationBar: true }
+							id="#" onclick="window.plugins.cordova.InAppBrowser.open('http://www.maaslandgroep.nl/',
+							 '_blank','location=yes,toolbar=no'
 							);" >Website</a>
 <br/>
 <br/>
