@@ -67,7 +67,7 @@ function loadChildBrowser(isInternal, URL) {
                     //var strPath = window.location.href; 
                     //var path = strPath.substr(0,strPath.lastIndexOf('/')) + '/' + URL; 
 					//console.log(encodeURI(path));
-					window.open(URL,'_system','location=no,closebuttoncaption=< Terug,toolbar=yes');
+					cordova.InAppBrowser.open('http://www.orimi.com/pdf-test.pdf','_system','location=no,closebuttoncaption=< Terug,toolbar=yes');
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
             } 
             else{ 
