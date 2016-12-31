@@ -60,7 +60,7 @@ function updateOrientation(){
 
 function loadPDF(URL) { 
 	console.log(URL);
-	loadChildBrowser(true, URL);
+	loadChildBrowser(false, URL); //false = android , true = iOS
 }
 function loadChildBrowser(isInternal, URL) { 
             if(isInternal){ 
@@ -78,7 +78,7 @@ console.log("URL1");
 console.log("URL2");
 					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
 console.log(newFileEntry.nativeURL);
-					            cordova.InAppBrowser.open(newFileEntry.nativeURL, '_system');
+					            window.open(newFileEntry.nativeURL, '_system');
 					        });
 					    });
 					});
