@@ -72,8 +72,7 @@ function loadChildBrowser(isInternal, URL) {
             } 
             else{ 
 					var uri = URL
-console.log(cordova);
-console.log(cordova.file);
+console.log(cordova.file.applicationDirectory +  uri); 
                     window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, function(fileEntry) {
 console.log("URL1");
 					    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(dirEntry) {
