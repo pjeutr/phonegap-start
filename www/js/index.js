@@ -73,15 +73,21 @@ function loadChildBrowser(isInternal, URL) {
             else{ 
 					var uri = URL
 console.log(cordova.file.applicationDirectory +  uri); 
-                    window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, function(fileEntry) {
+                    window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, 
+						function(fileEntry) {
 console.log("URL1");
 					    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(dirEntry) {
 console.log("URL2");
 					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
 console.log(newFileEntry.nativeURL);
 					            window.open(newFileEntry.nativeURL, '_system');
+								//	cordova.plugins.fileOpener2.open(newFileEntry.nativeURL,'application/pdf');
 					        });
 					    });
+					}, function(evt) {
+						console.log(evt.target.error.code);
 					});
+					
+					
             } 
     }
