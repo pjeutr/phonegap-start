@@ -73,12 +73,12 @@ function loadChildBrowser(isInternal, URL) {
             else{ 
 					var uri = URI
                     window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, function(fileEntry) {
-
+console.log("URL1");
 					    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(dirEntry) {
-
+console.log("URL2");
 					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
-
-					            window.open(newFileEntry.nativeURL, '_system');
+console.log(newFileEntry.nativeURL);
+					            cordova.InAppBrowser.open(newFileEntry.nativeURL, '_system');
 					        });
 					    });
 					});
