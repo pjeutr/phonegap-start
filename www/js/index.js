@@ -67,10 +67,20 @@ function loadChildBrowser(isInternal, URL) {
                     //var strPath = window.location.href; 
                     //var path = strPath.substr(0,strPath.lastIndexOf('/')) + '/' + URL; 
 					//console.log(encodeURI(path));
-					cordova.InAppBrowser.open('http://www.orimi.com/pdf-test.pdf','_system','location=no,closebuttoncaption=< Terug,toolbar=yes');
+					cordova.InAppBrowser.open(URL,'_blank','closebuttoncaption=< Terug,toolbar=yes');
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
             } 
             else{ 
-                    Cordova.exec("ChildBrowserCommand.showWebPage", URL ); 
+					var uri = URI
+                    window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, function(fileEntry) {
+
+					    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(dirEntry) {
+
+					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
+
+					            window.open(newFileEntry.nativeURL, '_system');
+					        });
+					    });
+					});
             } 
     }
