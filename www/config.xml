@@ -2,8 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.maaslandgroup.catalog"
-		versionCode = "8"
-        version   = "1.5.0">
+		versionCode = "9"
+        version   = "1.6.0">
     <name>Maasland</name>
 
     <description> 
@@ -17,7 +17,7 @@
     <feature name="http://api.phonegap.com/1.0/device" />
 	<feature name="geolocation" required="false" />
 		
-    <preference name="phonegap-version" value="cli-6.3.0" />
+    <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
 
