@@ -21,7 +21,7 @@
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
 
-    <plugin name="org.apache.cordova.inappbrowser" spec="1.6.1" source="npm" />
+    <plugin name="org.apache.cordova.inappbrowser" spec="2.0.2" source="npm" />
 	<plugin name="org.apache.cordova.file" spec="4.3.1" source="npm" />
 	
     <!-- android: allow installation on sdcard -->
