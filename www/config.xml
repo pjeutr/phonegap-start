@@ -17,7 +17,7 @@
     <feature name="http://api.phonegap.com/1.0/device" />
 	<feature name="geolocation" required="false" />
 		
-    <preference name="phonegap-version" value="cli-6.5.0" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
 
@@ -28,6 +28,7 @@
     <preference name="android-installLocation" value="auto" />
 
     <icon src="icon.png" />
+	<icon src="icon.png" width="1024" height="1024" />
 
 	<icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
 	<icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
