@@ -26,6 +26,7 @@
 	
     <!-- android: allow installation on sdcard -->
     <preference name="android-installLocation" value="auto" />
+    <preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,assets,root" />
 
     <icon src="icon.png" />
 	<icon src="icon.png" width="1024" height="1024" />
