@@ -85,7 +85,7 @@ console.log(newFileEntry.nativeURL);
 					        });
 					    });
 					}, function(evt) {
-						console.log(evt.target.error.code);
+						console.log(JSON.stringify(evt));
 					});
 					
 					
