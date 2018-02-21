@@ -72,11 +72,11 @@ function loadChildBrowser(isInternal, URL) {
             } 
             else{ 
 					var uri = 'www/' + URL
-					window.FilePath.resolveNativePath(uri, function(fileEntry) {
-						console.log(JSON.stringify(fileEntry));
-					}, function(evt) {
-						console.log(JSON.stringify(evt));
-					});
+					// window.FilePath.resolveNativePath(uri, function(fileEntry) {
+					// 	console.log(JSON.stringify(fileEntry));
+					// }, function(evt) {
+					// 	console.log(JSON.stringify(evt));
+					// });
 
 console.log("KAAS"+cordova.file.applicationDirectory +  uri); 
                     window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, 
