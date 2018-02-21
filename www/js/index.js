@@ -71,8 +71,14 @@ function loadChildBrowser(isInternal, URL) {
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
             } 
             else{ 
-					var uri = URL
-console.log(cordova.file.applicationDirectory +  uri); 
+					var uri = 'www/' + URL
+					window.FilePath.resolveNativePath(uri, function(fileEntry) {
+						console.log(JSON.stringify(fileEntry));
+					}, function(evt) {
+						console.log(JSON.stringify(evt));
+					});
+
+console.log("KAAS"+cordova.file.applicationDirectory +  uri); 
                     window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, 
 						function(fileEntry) {
 console.log("URL1");
