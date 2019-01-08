@@ -60,7 +60,7 @@ function updateOrientation(){
 
 function loadPDF(URL) { 
 	console.log(URL);
-	loadChildBrowser(true, URL); //false = android , true = iOS
+	loadChildBrowser(false, URL); //false = android , true = iOS
 }
 function loadChildBrowser(isInternal, URL) { 
             if(isInternal){ 
