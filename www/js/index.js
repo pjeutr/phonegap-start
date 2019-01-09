@@ -71,15 +71,15 @@ function loadChildBrowser(isInternal, URL) {
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
             } 
             else{ 
-					var uri = 'www/' + URL
+					var uri = 'file:///android_asset/www/' + URL
 					// window.FilePath.resolveNativePath(uri, function(fileEntry) {
 					// 	console.log(JSON.stringify(fileEntry));
 					// }, function(evt) {
 					// 	console.log(JSON.stringify(evt));
 					// });
 
-console.log("KAAS"+cordova.file.applicationDirectory +  uri); 
-                    window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, 
+console.log("KAAS"+uri); 
+                    window.resolveLocalFileSystemURL(uri, 
 						function(fileEntry) {
 console.log("URL1");
 					    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(dirEntry) {
