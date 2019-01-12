@@ -60,7 +60,7 @@ function updateOrientation(){
 
 function loadPDF(URL) { 
 	console.log(URL);
-	loadChildBrowser(false, URL); //false = android , true = iOS
+	loadChildBrowser(true, URL); //false = android , true = iOS
 }
 function loadChildBrowser(isInternal, URL) { 
             if(isInternal){ 
@@ -81,7 +81,8 @@ function loadChildBrowser(isInternal, URL) {
 console.log("KAAS"+cordova.file.applicationDirectory +  uri); 
                     window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, 
 						function(fileEntry) {
-console.log("URL1");
+// console.log(fileEntry.toInternalURL());
+// console.log(fileEntry.toURL());
 					    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(dirEntry) {
 console.log("URL2");
 					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
