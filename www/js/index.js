@@ -72,6 +72,7 @@ function loadChildBrowser(isInternal, URL) {
             } 
             else{ 
 					var uri = 'www/' + URL
+
 					// window.FilePath.resolveNativePath(uri, function(fileEntry) {
 					// 	console.log(JSON.stringify(fileEntry));
 					// }, function(evt) {
@@ -87,8 +88,8 @@ console.log("KAAS"+cordova.file.applicationDirectory +  uri);
 console.log("URL2");
 					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
 console.log(newFileEntry.nativeURL);
-					            window.open(newFileEntry.nativeURL, '_system');
-								//	cordova.plugins.fileOpener2.open(newFileEntry.nativeURL,'application/pdf');
+					            //window.open(newFileEntry.nativeURL, '_system');
+								cordova.plugins.fileOpener2.open(newFileEntry.nativeURL,'application/pdf');
 					        });
 					    });
 					}, function(evt) {
