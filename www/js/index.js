@@ -93,6 +93,7 @@ console.log(newFileEntry.nativeURL);
 					        });
 					    });
 					}, function(evt) {
+						alert("Problem opening catalogus \n" +JSON.stringify(evt));
 						console.log(JSON.stringify(evt));
 					});
 					
