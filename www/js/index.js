@@ -86,17 +86,31 @@ console.log("File url="+cordova.file.applicationDirectory +  uri);
 console.log(fileEntry.toInternalURL());
 console.log(fileEntry.toURL());
 					    //window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(dirEntry) {
-console.log("URL2");
-// 					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
-// console.log(newFileEntry.nativeURL);
-// 					            //window.open(newFileEntry.nativeURL, '_system');
-								cordova.plugins.fileOpener2.open(fileEntry.toInternalURL(),'application/pdf');
-//					        });
-					    //});
-					}, function(evt) {
-						alert("Problem opening catalogus \n" +JSON.stringify(evt));
-						console.log(JSON.stringify(evt));
-					});
+// console.log("URL2");
+// // 					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
+// // console.log(newFileEntry.nativeURL);
+// // 					            //window.open(newFileEntry.nativeURL, '_system');
+// 								cordova.plugins.fileOpener2.open(fileEntry.toInternalURL(),'application/pdf');
+// 								console.log("URL2");
+// //					        });
+// 					    //});
+// 					}, function(evt) {
+// 						alert("Problem opening catalogus \n" +JSON.stringify(evt));
+// 						console.log(JSON.stringify(evt));
+// 					});
+					
+cordova.plugins.fileOpener2.open(
+    fileEntry.toInternalURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
+    'application/pdf',
+    {
+        error : function(e) {
+            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+        },
+        success : function () {
+            console.log('file opened successfully');
+        }
+    }
+);
 					
 					
             } 
