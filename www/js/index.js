@@ -81,10 +81,10 @@ function loadChildBrowser(isInternal, URL) {
 
 console.log("File url="+cordova.file.applicationDirectory +  uri); 
 
-                    window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, 
-						function(fileEntry) {
-console.log(fileEntry.toInternalURL());
-console.log(fileEntry.toURL());
+      //               window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, 
+						// function(fileEntry) {
+console.log(cordova.file.applicationDirectory +  uri);
+//console.log(fileEntry.toURL());
 					    //window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(dirEntry) {
 // console.log("URL2");
 // // 					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
@@ -100,7 +100,7 @@ console.log(fileEntry.toURL());
 // 					});
 					
 cordova.plugins.fileOpener2.open(
-    fileEntry.toInternalURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
+    "../pdf/".uri, // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
     'application/pdf',
     {
         error : function(e) {
@@ -111,7 +111,7 @@ cordova.plugins.fileOpener2.open(
         }
     }
 );
-					
+
 					
             } 
     }

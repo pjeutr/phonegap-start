@@ -24,7 +24,7 @@
 	<plugin name="cordova-plugin-inappbrowser" spec="~2.0.2" />
 	<plugin name="cordova-plugin-file" spec="~6.0.1" />
 	<!-- plugin name="cordova-plugin-filepath" spec="~1.2.0" source="npm" -->
-	<gap:plugin name="cordova-plugin-file-opener2" source="npm" />
+	<plugin name="cordova-plugin-file-opener2" source="npm" />
 
     <!-- android: allow installation on sdcard -->
     <preference name="android-installLocation" value="auto" />
