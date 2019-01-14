@@ -81,24 +81,22 @@ function loadChildBrowser(isInternal, URL) {
 
 console.log("File url="+cordova.file.applicationDirectory +  uri); 
 
-cordova.plugins.fileOpener2.open(cordova.file.applicationDirectory +  uri,'application/pdf');
-
-//                     window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, 
-// 						function(fileEntry) {
-// // console.log(fileEntry.toInternalURL());
-// // console.log(fileEntry.toURL());
-// 					    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(dirEntry) {
-// console.log("URL2");
+                    window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, 
+						function(fileEntry) {
+console.log(fileEntry.toInternalURL());
+console.log(fileEntry.toURL());
+					    //window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(dirEntry) {
+console.log("URL2");
 // 					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
 // console.log(newFileEntry.nativeURL);
 // 					            //window.open(newFileEntry.nativeURL, '_system');
-// 								cordova.plugins.fileOpener2.open(newFileEntry.nativeURL,'application/pdf');
-// 					        });
-// 					    });
-// 					}, function(evt) {
-// 						alert("Problem opening catalogus \n" +JSON.stringify(evt));
-// 						console.log(JSON.stringify(evt));
-// 					});
+								cordova.plugins.fileOpener2.open(fileEntry.toURL(),'application/pdf');
+//					        });
+					    //});
+					}, function(evt) {
+						alert("Problem opening catalogus \n" +JSON.stringify(evt));
+						console.log(JSON.stringify(evt));
+					});
 					
 					
             } 
