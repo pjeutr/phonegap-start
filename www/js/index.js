@@ -98,6 +98,21 @@ cordova.plugins.fileOpener2.open(
     {
         error : function(e) {
             console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+
+
+			cordova.plugins.fileOpener2.open(
+			    fileEntry.toInternalURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
+			    'application/pdf',
+			    {
+			        error : function(e) {
+			            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+			        },
+			        success : function () {
+			            console.log('file opened successfully');
+			        }
+			    }
+			);	
+            
         },
         success : function () {
             console.log('file opened successfully');
