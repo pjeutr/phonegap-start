@@ -90,7 +90,7 @@ console.log("URL2");
 // 					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
 // console.log(newFileEntry.nativeURL);
 // 					            //window.open(newFileEntry.nativeURL, '_system');
-								cordova.plugins.fileOpener2.open(fileEntry.toURL(),'application/pdf');
+								cordova.plugins.fileOpener2.open(fileEntry.toInternalURL(),'application/pdf');
 //					        });
 					    //});
 					}, function(evt) {
