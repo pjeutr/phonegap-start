@@ -93,7 +93,7 @@ console.log("URL2");
 								//cordova.plugins.fileOpener2.open(fileEntry.toInternalURL(),'application/pdf');
 
 cordova.plugins.fileOpener2.open(
-    fileEntry.toInternalURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
+    fileEntry.toURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
     'application/pdf',
     {
         error : function(e) {
