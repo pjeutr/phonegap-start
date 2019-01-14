@@ -79,7 +79,7 @@ function loadChildBrowser(isInternal, URL) {
 					// 	console.log(JSON.stringify(evt));
 					// });
 
-console.log("KAAS"+cordova.file.applicationDirectory +  uri); 
+console.log("File url="+cordova.file.applicationDirectory +  uri); 
                     window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, 
 						function(fileEntry) {
 // console.log(fileEntry.toInternalURL());

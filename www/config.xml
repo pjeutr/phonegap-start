@@ -2,8 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.maaslandgroup.catalog"
-		versionCode = "11"
-        version   = "1.7.1">
+		versionCode = "12"
+        version   = "1.7.2">
     <name>Maasland</name>
 
     <description> 
@@ -28,7 +28,7 @@
 	<plugin name="cordova-plugin-file" spec="~6.0.1" />
 	<!-- plugin name="cordova-plugin-filepath" spec="~1.2.0" source="npm" -->
 	<gap:plugin name="cordova-plugin-file-opener2-tectronik" source="npm" />
-	
+
     <!-- android: allow installation on sdcard -->
     <preference name="android-installLocation" value="auto" />
     <preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,assets,root" />
