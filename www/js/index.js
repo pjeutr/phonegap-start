@@ -106,7 +106,7 @@ cordova.plugins.fileOpener2.open(
 			    {
 			        error : function(e) {
 			            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
-			            alert("Do you have a pdf reader installed? \n" +JSON.stringify(evt));
+			            alert("Do you have a pdf reader installed? \n" +e.message);
 			        },
 			        success : function () {
 			            console.log('file opened successfully');
