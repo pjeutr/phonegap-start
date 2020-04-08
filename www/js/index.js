@@ -71,8 +71,8 @@ function loadChildBrowser(isInternal, URL) {
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
             } 
             else{ 
-					//var uri = 'www/' + URL
-					var uri = URL
+					var uri = 'www/' + URL
+
 					// window.FilePath.resolveNativePath(uri, function(fileEntry) {
 					// 	console.log(JSON.stringify(fileEntry));
 					// }, function(evt) {
@@ -106,6 +106,7 @@ cordova.plugins.fileOpener2.open(
 			    {
 			        error : function(e) {
 			            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+			            alert("Do you have a pdf reader installed? \n" +JSON.stringify(evt));
 			        },
 			        success : function () {
 			            console.log('file opened successfully');
