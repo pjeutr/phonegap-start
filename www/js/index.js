@@ -71,8 +71,8 @@ function loadChildBrowser(isInternal, URL) {
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
             } 
             else{ 
-					var uri = 'www/' + URL
-
+					//var uri = 'www/' + URL
+					var uri = URL
 					// window.FilePath.resolveNativePath(uri, function(fileEntry) {
 					// 	console.log(JSON.stringify(fileEntry));
 					// }, function(evt) {
