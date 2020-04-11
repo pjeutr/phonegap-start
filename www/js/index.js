@@ -60,14 +60,15 @@ function updateOrientation(){
 
 function loadPDF(URL) { 
 	console.log(URL);
-	loadChildBrowser(false, URL); //false = android , true = iOS
+	loadChildBrowser(true, URL); //false = android , true = iOS
 }
 function loadChildBrowser(isInternal, URL) { 
             if(isInternal){ 
                     //var strPath = window.location.href; 
                     //var path = strPath.substr(0,strPath.lastIndexOf('/')) + '/' + URL; 
 					//console.log(encodeURI(path));
-					cordova.InAppBrowser.open(URL,'_blank','closebuttoncaption=< Terug,toolbar=yes');
+					//cordova.InAppBrowser.open(URL,'_blank','closebuttoncaption=< Terug,toolbar=yes');
+					cordova.InAppBrowser.open(URL,'_system','closebuttoncaption=< Terug,toolbar=yes');
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
             } 
             else{ 
@@ -106,7 +107,7 @@ cordova.plugins.fileOpener2.open(
 			    {
 			        error : function(e) {
 			            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
-			            alert("Do you have a pdf reader installed? \n" +e.message);
+			            //alert("Do you have a pdf reader installed? \n" +e.message);
 			        },
 			        success : function () {
 			            console.log('file opened successfully');
