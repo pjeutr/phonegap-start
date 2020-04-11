@@ -67,8 +67,11 @@ function loadChildBrowser(isInternal, URL) {
                     //var strPath = window.location.href; 
                     //var path = strPath.substr(0,strPath.lastIndexOf('/')) + '/' + URL; 
 					//console.log(encodeURI(path));
-					cordova.InAppBrowser.open(URL,'_blank','closebuttoncaption=< Terug,toolbar=yes');
+					//cordova.InAppBrowser.open(URL,'_blank','closebuttoncaption=< Terug,toolbar=yes');
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
+                    window.open(URL,"_system","location=yes,enableViewportScale=yes,hidden=no");
+
+
             } 
             else{ 
 					var uri = 'www/' + URL
