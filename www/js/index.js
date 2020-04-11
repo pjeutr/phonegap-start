@@ -81,7 +81,7 @@ function loadChildBrowser(isInternal, URL) {
 
 console.log("File url="+cordova.file.applicationDirectory +  uri); 
 
-                    window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, 
+                    window.resolveLocalFileSystemURI(cordova.file.applicationDirectory +  uri, 
 						function(fileEntry) {
 console.log(fileEntry.toInternalURL());
 console.log(fileEntry.toURL());
@@ -91,6 +91,14 @@ console.log("URL2");
 // console.log(newFileEntry.nativeURL);
 // 					            //window.open(newFileEntry.nativeURL, '_system');
 								//cordova.plugins.fileOpener2.open(fileEntry.toInternalURL(),'application/pdf');
+
+/*
+04-10 10:28:29.925 27168 27168 D SystemWebChromeClient: file:///android_asset/www/js/index.js?a: Line 62 : pdf/004_AC_2020_ZP.pdf
+04-10 10:28:29.925 27168 27168 D SystemWebChromeClient: file:///android_asset/www/js/index.js?a: Line 82 : File url=file:///android_asset/pdf/004_AC_2020_ZP.pdf
+04-10 10:29:45.239 27168 27168 D SystemWebChromeClient: file:///android_asset/www/js/index.js?a: Line 126 : {"code":1}
+04-10 10:29:46.496 27168 27168 D SystemWebChromeClient: file:///android_asset/www/js/index.js?a: Line 62 : pdf/006_DB_2020_ZP.pdf
+04-10 10:29:46.498 27168 27168 D SystemWebChromeClient: file:///android_asset/www/js/index.js?a: Line 82 : File url=file:///android_asset/pdf/006_DB_2020_ZP.pdf
+*/
 
 cordova.plugins.fileOpener2.open(
     fileEntry.toURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
