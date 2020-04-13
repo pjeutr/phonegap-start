@@ -89,8 +89,8 @@ console.log("File url="+cordova.file.applicationDirectory +  uri);
 							console.log("URL2");
  					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
 								console.log(newFileEntry.nativeURL);
-// 					            window.open(newFileEntry.nativeURL, '_system');
-								//cordova.plugins.fileOpener2.open(fileEntry.toInternalURL(),'application/pdf');
+// 					            //window.open(newFileEntry.nativeURL, '_system');
+								cordova.plugins.fileOpener2.open(fileEntry.toInternalURL(),'application/pdf');
 
 // cordova.plugins.fileOpener2.open(
 //     fileEntry.toURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
