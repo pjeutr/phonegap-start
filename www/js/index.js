@@ -60,15 +60,14 @@ function updateOrientation(){
 
 function loadPDF(URL) { 
 	console.log(URL);
-	loadChildBrowser(true, URL); //false = android , true = iOS
+	loadChildBrowser(false, URL); //false = android , true = iOS
 }
 function loadChildBrowser(isInternal, URL) { 
             if(isInternal){ 
                     //var strPath = window.location.href; 
                     //var path = strPath.substr(0,strPath.lastIndexOf('/')) + '/' + URL; 
 					//console.log(encodeURI(path));
-					//cordova.InAppBrowser.open(URL,'_blank','closebuttoncaption=< Terug,toolbar=yes');
-					cordova.InAppBrowser.open(URL,'_system','closebuttoncaption=< Terug,toolbar=yes');
+					cordova.InAppBrowser.open(URL,'_blank','closebuttoncaption=< Terug,toolbar=yes');
                     //Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(path) ); 
             } 
             else{ 
@@ -84,45 +83,45 @@ console.log("File url="+cordova.file.applicationDirectory +  uri);
 
                     window.resolveLocalFileSystemURL(cordova.file.applicationDirectory +  uri, 
 						function(fileEntry) {
-console.log(fileEntry.toInternalURL());
-console.log(fileEntry.toURL());
-					    //window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(dirEntry) {
-console.log("URL2");
-// 					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
-// console.log(newFileEntry.nativeURL);
-// 					            //window.open(newFileEntry.nativeURL, '_system');
+						console.log(fileEntry.toInternalURL());
+						console.log(fileEntry.toURL());
+					    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(dirEntry) {
+							console.log("URL2");
+ 					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
+								console.log(newFileEntry.nativeURL);
+// 					            window.open(newFileEntry.nativeURL, '_system');
 								//cordova.plugins.fileOpener2.open(fileEntry.toInternalURL(),'application/pdf');
 
-cordova.plugins.fileOpener2.open(
-    fileEntry.toURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
-    'application/pdf',
-    {
-        error : function(e) {
-            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+// cordova.plugins.fileOpener2.open(
+//     fileEntry.toURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
+//     'application/pdf',
+//     {
+//         error : function(e) {
+//             console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
 
 
-			cordova.plugins.fileOpener2.open(
-			    fileEntry.toInternalURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
-			    'application/pdf',
-			    {
-			        error : function(e) {
-			            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
-			            alert("Do you have a pdf reader installed? \n" +e.message);
-			        },
-			        success : function () {
-			            console.log('file opened successfully');
-			        }
-			    }
-			);	
+// 			cordova.plugins.fileOpener2.open(
+// 			    fileEntry.toInternalURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
+// 			    'application/pdf',
+// 			    {
+// 			        error : function(e) {
+// 			            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+// 			            alert("Do you have a pdf reader installed? \n" +e.message);
+// 			        },
+// 			        success : function () {
+// 			            console.log('file opened successfully');
+// 			        }
+// 			    }
+// 			);	
             
-        },
-        success : function () {
-            console.log('file opened successfully');
-        }
-    }
-);								
-//					        });
-					    //});
+//         },
+//         success : function () {
+//             console.log('file opened successfully');
+//         }
+//     }
+// );								
+					        });
+					    });
 					}, function(evt) {
 						alert("Problem opening catalogus \n" +JSON.stringify(evt));
 						console.log(JSON.stringify(evt));
