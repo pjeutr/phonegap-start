@@ -90,36 +90,36 @@ console.log("File url="+cordova.file.applicationDirectory +  uri);
  					        fileEntry.copyTo(dirEntry, uri.split('/').pop(), function(newFileEntry) {
 								console.log(newFileEntry.nativeURL);
 // 					            //window.open(newFileEntry.nativeURL, '_system');
-								cordova.plugins.fileOpener2.open(fileEntry.toInternalURL(),'application/pdf');
+								//cordova.plugins.fileOpener2.open(fileEntry.toInternalURL(),'application/pdf');
 
-// cordova.plugins.fileOpener2.open(
-//     fileEntry.toURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
-//     'application/pdf',
-//     {
-//         error : function(e) {
-//             console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+cordova.plugins.fileOpener2.open(
+    fileEntry.toURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
+    'application/pdf',
+    {
+        error : function(e) {
+            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
 
 
-// 			cordova.plugins.fileOpener2.open(
-// 			    fileEntry.toInternalURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
-// 			    'application/pdf',
-// 			    {
-// 			        error : function(e) {
-// 			            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
-// 			            alert("Do you have a pdf reader installed? \n" +e.message);
-// 			        },
-// 			        success : function () {
-// 			            console.log('file opened successfully');
-// 			        }
-// 			    }
-// 			);	
+			cordova.plugins.fileOpener2.open(
+			    fileEntry.toInternalURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
+			    'application/pdf',
+			    {
+			        error : function(e) {
+			            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+			            alert("Do you have a pdf reader installed? \n" +e.message);
+			        },
+			        success : function () {
+			            console.log('file opened successfully');
+			        }
+			    }
+			);	
             
-//         },
-//         success : function () {
-//             console.log('file opened successfully');
-//         }
-//     }
-// );								
+        },
+        success : function () {
+            console.log('file opened successfully');
+        }
+    }
+);								
 					        });
 					    });
 					}, function(evt) {
