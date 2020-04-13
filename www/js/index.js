@@ -94,7 +94,6 @@ console.log("File url="+cordova.file.applicationDirectory +  uri);
 
 cordova.plugins.fileOpener2.open(
 	newFileEntry.nativeURL
-    //fileEntry.toURL(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
     'application/pdf',
     {
         error : function(e) {
